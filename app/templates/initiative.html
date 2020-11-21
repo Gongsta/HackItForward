@@ -2,14 +2,36 @@
 
 {% block head %}
 <title>{{ initiative.name }} | HackItForward</title>
+
+<link rel="stylesheet" href="{{ static('css/challenge.css') }}">
+<script src="https://kit.fontawesome.com/2a8ca409bf.js" crossorigin="anonymous"></script>
 {% endblock %}
 
 {% block body %}
-<div class="content">
-  <div class="row">
-    <h2>{{ initiative.name }}</h2>
+<div class="content" style="margin-top: 30px">
+  <i class="fa fa-caret-up" aria-hidden="true"></i>
+  <p>12 likes</p>
+  <p>500 bookmarks</p>
+  <div class="social-share">
+    <div>
+      <a href="https://www.facebook.com/KuriusMtl/" target="_blank" rel="noopener" class="social-icon level-content level-item">
+        <i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i>
+      </a>
+      <a href="https://discord.com/invite/pU7XCG6" target="_blank" rel="noopener" class="social-icon level-content level-item">
+        <i class="fa fa-discord fa-lg""></i>
+      </a>
+      <a href="https://www.instagram.com/kuriusmtl/" target="_blank" rel="noopner" class="social-icon level-content level-item">
+        <i class="fa fa-instagram fa-lg"></i>
+      </a>
+    </div>
   </div>
-  <div class="frame" id="challenge-frame">
+
+  <div class="row">
+    <div class="col-12">
+      <h2 style="text-align: center;">{{ initiative.name }}</h2>
+    </div>
+  </div>
+  <div>
     <div class="buttons">
       {% block buttons %}
         {% if initiative.can_edit(request.user) %}
